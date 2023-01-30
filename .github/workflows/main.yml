@@ -3,16 +3,20 @@ on:
   push:
     branches:
       -main
-  issues:
-    types: [openned, reopened]
-    
+    paths-ignore: [.github/**]
+  pull_request:
+    branches: [main]  
   schedule:
     - cron: '11 11 * * 5'
     
   workflow_dispatch:
 jobs:
-  my-first-job:
+  Build:    
     runs-on: ubuntu-latest
-    
-  steps:
-    run: echo "Hello World"
+    steps:
+      - run: | 
+          echo "Hello World"
+          echo "The job was triggered by event ${{ github.event_name }}"
+          echo "branch name is ${{.github.reg }}"
+      - uses: actions/checkout@v3.3.0
+      - run: tree-a
