@@ -1,4 +1,4 @@
-name : test
+name : DSW test
 on:
   push:
     branches:
