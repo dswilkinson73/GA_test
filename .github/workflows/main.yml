@@ -17,6 +17,6 @@ jobs:
       - run: | 
           echo "Hello World"
           echo "The job was triggered by event ${{ github.event_name }}"
-          echo "branch name is ${{.github.reg }}"
+          echo "branch name is ${{ github.reg }}"
       - uses: actions/checkout@v3.3.0
       - run: tree-a
