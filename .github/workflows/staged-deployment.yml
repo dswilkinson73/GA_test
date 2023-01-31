@@ -9,13 +9,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event_name == "workflow_dispatch"
+    if: github.event_name == 'workflow_dispatch'
     steps:
       - run: "Build something"
       
   Test:
     runs-on: ubuntu-latest
-    if: github.event_name == "workflow_dispatch"
+    if: github.event_name == 'workflow_dispatch'
     environment: test
     needs: build
     steps:
@@ -23,7 +23,7 @@ jobs:
     
   Load-Test:
     runs-on: ubuntu-latest
-    if: github.event_name == "workflow_dispatch"
+    if: github.event_name == 'workflow_dispatch'
     environment: load-test
     needs: build
     steps:
@@ -33,7 +33,7 @@ jobs:
       
   Production:
     runs-on: ubuntu-latest
-    if: github.event_name == "workflow_dispatch"
+    if: github.event_name == 'workflow_dispatch'
     environment:
       name: Production
       url: http://www.writeabout.it
