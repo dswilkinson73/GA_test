@@ -28,16 +28,15 @@ jobs:
     needs: build
     steps:
       - run: |
-      echo "Load Test something"
-      sleep 15
+          echo "Load Test something"
+          sleep 15
       
   Production:
     runs-on: ubuntu-latest
     if: github.event_name == "workflow_dispatch"
-    environment: productionn
-      name: production
-      url: 
-    needs: [Test, Load-test]
+    environment:
+      name: Production
+      url: http://www.writeabout.it
     steps:
       - run: |
           echo "Step 1"
